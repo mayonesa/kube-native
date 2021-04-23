@@ -3,13 +3,13 @@ pipeline {
     agent any    
     
     environment {
-        MSR_FQDN_PORT='<registry dynamic DNS>:4443'
+        MSR_FQDN_PORT='66avydptmkzwkzpt5-mkbief2gjz6o4dmp2.labs.strigo.io:4443'
     }
 
     stages {
         stage('Build') {
             environment {
-                MSR_ACCESS_KEY = credentials('jenkins-msr-access-token')
+                MSR_ACCESS_KEY = credentials('jenkins_msr_token')
 		MAJORMINOR = '0.0'
             }
             steps {
